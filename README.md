@@ -2,7 +2,7 @@
 
 A simple **Ping Pong game built in C++ using the Raylib library**, featuring a **player vs CPU game mode**. The player controls one paddle while the CPU automatically moves its paddle to follow the ball.
 
-![Ping Pong Game](86a37b99-be43-4e64-b664-88d0c4f0827d.png)
+![Ping Pong Game](<img width="790" height="620" alt="Screenshot 2026-09-12 211350" src="https://github.com/user-attachments/assets/2b5de054-f6e0-4bdb-9789-ab17ca653987" />)
 
 ## Features
 
