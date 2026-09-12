@@ -1,89 +1,148 @@
-# Raylib-CPP Starter Template for VS Code
+# Ping Pong Game
 
-![Language](https://img.shields.io/badge/language-C%2B%2B-brightgreen)
-![Raylib](https://img.shields.io/badge/raylib-6.0-00d4aa)
-![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue)
-![Editor](https://img.shields.io/badge/editor-VS%20Code-007ACC)
+A simple **Ping Pong game built in C++ using the Raylib library**, featuring a **player vs CPU game mode**. The player controls one paddle while the CPU automatically moves its paddle to follow the ball.
 
-A minimal C++ project scaffold for Visual Studio Code on Windows — includes a bouncing ball demo and zero boilerplate friction.
+![Ping Pong Game](86a37b99-be43-4e64-b664-88d0c4f0827d.png)
 
-<p align="center">
-  <a href="https://youtu.be/acvgbKRaxDI">
-    <img src="preview.jpg" alt="Preview of the bouncing ball demo — click to watch tutorial" width="800">
-  </a>
-</p>
+## Features
 
-<p align="center">
-  <a href="https://youtu.be/acvgbKRaxDI">
-    <img src="https://img.shields.io/badge/▶%20Watch%20the%20Video%20Tutorial-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the Video Tutorial on YouTube">
-  </a>
-</p>
+* Player vs CPU gameplay
+* CPU-controlled opponent
+* Ball movement and bouncing
+* Paddle-ball collision detection
+* Automatic CPU paddle movement
+* Score tracking
+* Two-sided game arena
+* Center line
+* Simple and clean 2D graphics
+* Built using C++ and Raylib
 
----
+## Tech Stack
 
-## Get started in 3 steps
+* **Language:** C++
+* **Graphics Library:** Raylib
+* **Game Type:** 2D Arcade Game
 
-**1.** Double-click `main.code-workspace` to open the project in VS Code.
+## Gameplay
 
-**2.** In the Explorer panel, navigate to the `src/` folder and open `main.cpp`.
+The game is played between the **player and a CPU-controlled opponent**.
 
-**3.** Press `F5` to compile and run.
+The player controls the paddle on one side of the screen, while the CPU automatically controls the paddle on the opposite side.
 
----
+The objective is to hit the ball back toward the opponent and prevent it from passing your paddle.
 
-## What's inside
+Whenever the ball passes a paddle, the opposing side receives a point and the ball is reset.
 
-| | Feature | Details |
-|---|---|---|
-| 📁 | **Clean folder structure** | All source code lives in `src/` for clear organisation |
-| 🎱 | **Bouncing ball demo** | Ready-to-run example using raylib's core 2D drawing API |
-| ⚙️ | **VS Code tasks** | Pre-configured build tasks — no manual setup required |
-| ✅ | **Tested on Win 10/11** | Works with raylib 6.0 on both platforms out of the box |
+## Controls
 
----
+### Player
 
-## Quick look
+| Key | Action           |
+| --- | ---------------- |
+| `W` | Move paddle up   |
+| `S` | Move paddle down |
 
-```cpp
-#include <raylib.h>
-#include "ball.h"
+The CPU paddle is controlled automatically by the game.
 
-int main()
-{
-    const Color darkGreen = {20, 160, 133, 255};
+## CPU
 
-    constexpr int screenWidth = 800;
-    constexpr int screenHeight = 600;
+The game includes a basic CPU opponent that tracks the position of the ball and moves its paddle accordingly.
 
-    Ball ball;
+The CPU continuously checks the ball's vertical position and adjusts its paddle movement to attempt to intercept the ball.
 
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
-    SetTargetFPS(60);
+This provides a single-player experience without requiring a second human player.
 
-    while (!WindowShouldClose())
-    {
-        ball.Update();
+## Requirements
 
-        BeginDrawing();
-            ClearBackground(darkGreen);
-            ball.Draw();
-        EndDrawing();
-    }
+* C++ compiler
 
-    CloseWindow();
-}
+  * MinGW/G++
+  * MSVC
+  * or another compatible compiler
+* Raylib library
+* Windows, Linux, or another Raylib-supported platform
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Kiwinrar/Ping-Pong-Game.git
+cd Ping-Pong-Game
 ```
 
----
+### 2. Install Raylib
 
-## What's changed
+Download and configure Raylib for your system.
 
-The template now uses folders for better organisation. All source code lives in the `src/` folder.
+[Raylib Official Website](https://www.raylib.com/?utm_source=chatgpt.com)
 
----
+### 3. Compile
 
-## Resources
+The compilation command depends on your Raylib installation.
 
-🎥 [Video Tutorial on YouTube](https://youtu.be/acvgbKRaxDI)
-&nbsp;&nbsp;|&nbsp;&nbsp;
-📺 [My YouTube Channel](https://www.youtube.com/channel/UC3ivOTE5EgpmF2DHLBmWIWg)
+For example, with MinGW on Windows:
+
+```bash
+g++ main.cpp -o PingPong.exe -lraylib -lopengl32 -lgdi32 -lwinmm
+```
+
+### 4. Run
+
+```bash
+PingPong.exe
+```
+
+## Project Structure
+
+```text
+Ping-Pong-Game/
+│
+├── main.cpp
+├── README.md
+└── ...
+```
+
+## Game Mechanics
+
+The game implements several fundamental game-development concepts:
+
+* **Game Loop** — continuously updates and renders the game.
+* **Player Input** — keyboard input controls the player's paddle.
+* **CPU AI** — the CPU follows the ball's position.
+* **Ball Physics** — the ball moves continuously and bounces off the arena boundaries.
+* **Collision Detection** — collisions between the ball and paddles change the ball's direction.
+* **Scoring System** — points are awarded when the ball passes a paddle.
+* **Rendering** — Raylib is used to draw the game objects and interface.
+
+## Future Improvements
+
+Possible improvements include:
+
+* Multiple CPU difficulty levels
+* Smarter CPU prediction
+* Sound effects
+* Background music
+* Start and pause menus
+* Win/loss conditions
+* Increasing ball speed
+* Particle effects
+* Improved graphics and animations
+* High-score system
+* Player customization
+
+## Learning Objectives
+
+This project was created to practice:
+
+* C++ programming
+* Raylib game development
+* Game loops
+* 2D rendering
+* Keyboard input
+* Collision detection
+* Basic physics
+* Score management
+* Implementing simple game AI
+
+
